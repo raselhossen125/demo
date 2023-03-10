@@ -5,9 +5,42 @@ import 'package:demo/widgets/common_widgets.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   static const routeName = 'home-page';
+
+  List<Map> list = [
+    {
+      'Rasel': 1000000,
+      'Rifat': 2000000,
+      'Foyzur': 3000000,
+    },
+    {
+      10: 100,
+      20: 200,
+      30: 300,
+    },
+    {
+      1: 'One',
+      2: 'Two',
+      3: 'Three',
+    },
+  ];
+
+  List<Map> list2 = [
+    {
+      'id': 01,
+      'name': 'Rasel',
+    },
+    {
+      'id': 02,
+      'name': 'Rifat',
+    },
+    {
+      'id': 03,
+      'name': 'Foyzur',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,6 +103,18 @@ class HomePage extends StatelessWidget {
                   lableTextColor: Colors.red,
                   onTap: () {},
                 );
+              },
+            ),
+            CustomButtoon(
+              marginVertical: 8,
+              label: 'getValueFromListOfMap',
+              isDisable: false,
+              onPressed: () {
+                var val = getValueFromListOfMap(dataList: list, K: 2);
+                print(val);
+                var valList =
+                    getValueListFromListOfMap(dataList: list2, K: 'name');
+                print(valList.map((e) => e.toString().toUpperCase()));
               },
             ),
           ],
