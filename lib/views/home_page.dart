@@ -1,13 +1,13 @@
 import 'package:demo/global/dialog/dialog.dart';
 import 'package:demo/global/function/function.dart';
 import 'package:demo/global/loading/loading.dart';
+import 'package:demo/views/socket_page.dart';
 import 'package:demo/widgets/common_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-
-  static const routeName = 'home-page';
 
   List<Map> list = [
     {
@@ -115,6 +115,17 @@ class HomePage extends StatelessWidget {
                 var valList =
                     getValueListFromListOfMap(dataList: list2, K: 'name');
                 print(valList.map((e) => e.toString().toUpperCase()));
+              },
+            ),
+            CustomButtoon(
+              marginVertical: 8,
+              label: 'Socket',
+              // isDisable: false,
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SocketPage()),
+                );
               },
             ),
           ],
