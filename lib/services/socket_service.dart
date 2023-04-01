@@ -5,8 +5,8 @@ List messageList = [];
 class SocketServices {
   IO.Socket? socket;
 
-  initSocket() {
-    socket = IO.io('http://pos.wiztecbd.online/api/incomes', <String, dynamic>{
+  initSocket(String url) {
+    socket = IO.io(url, <String, dynamic>{
       'autoConnect': false,
       'transports': ['websocket'],
     });

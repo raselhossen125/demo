@@ -13,7 +13,7 @@ class _SocketPageState extends State<SocketPage> {
 
   @override
   initState() {
-    services.initSocket();
+    services.initSocket('url');
     super.initState();
   }
 
